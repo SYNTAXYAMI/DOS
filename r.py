@@ -27,7 +27,7 @@ def checksum(data):
     s = sum(struct.unpack("!%dH" % (len(data) // 2), data))
     s = (s >> 16) + (s & 0xffff)
     s += s >> 16
-    return (\~s) & 0xffff
+    return (~s) & 0xffff
 
 def resolve(host):
     try:
